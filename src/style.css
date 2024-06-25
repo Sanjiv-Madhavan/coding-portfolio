@@ -21,7 +21,7 @@
 
 .hero-content {
     padding: 9rem 0 9rem !important;
-    color: #fbd9ad;
+    color: #ffff;
     text-align: left;
     z-index: 6;
 }
@@ -31,6 +31,51 @@
     font-size: 70px;
 }
 
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-fluid {
+    height: 200px;
+}
+
+.section-partition {
+    display: flex;
+    overflow: hidden !important;
+    margin-top: 105px !important;
+    padding-top: 100px;
+}
+
+.about-me-contents {
+    display: block;
+    font-size: 1.4rem;
+    align-items: center !important;
+}
+
+.about-me-individual-contents {
+    margin: 20px;
+}
+
+.about-me-individual-contents-clipboard {
+    margin: 20px 20px 20px 0px;
+    border: 2px solid #bf8770;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.illustrator-message {
+    font-size: 1rem;
+    background-color: rgb(192, 163, 105);
+    opacity: 0.5;
+    padding: 10px 5px 10px 5px;
+    border-radius: 5px;
+    display: block;
+    justify-content: center;
+    color:rgb(255, 255, 255) !important;
+    margin-top: 10px;
+}
 /* ------ Text Colors ------- */
 .color-text-variable-name {
     color: #6e96ab;
@@ -49,7 +94,7 @@
 }
 
 .color-text-variable-comments {
-    color: #6a9956;
+    color: #527347;
 }
 
 @keyframes wave-animation {

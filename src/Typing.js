@@ -71,15 +71,15 @@ const Typing = () => {
         className='color-text-variable-string'
         cursor={true}
         sequence={[
-          2000,
+          2200,
           () => {
             setTypingStatus('Typing...');
           },
           '"Sanjiv Sethu Madhavan"',
+          3000, 
           () => {
             setTypingStatus('Done Typing');
           },
-          0, 
         ]}
         repeat={Infinity}
       />
