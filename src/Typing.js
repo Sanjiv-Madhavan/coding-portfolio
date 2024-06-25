@@ -23,7 +23,7 @@ const Typing = () => {
         className='color-text-variable-keyword'
         cursor={false}
         sequence={[
-          1500,
+          5500,
           () => {
             setTypingStatus('Typing...');
           },
@@ -39,7 +39,7 @@ const Typing = () => {
         className='color-text-variable-name'
         cursor={false}
         sequence={[
-          1800,
+          5800,
           () => {
             setTypingStatus('Typing...');
           },
@@ -55,7 +55,7 @@ const Typing = () => {
         className='color-text-variable-operand'
         cursor={false}
         sequence={[
-          2000,
+          6000,
           () => {
             setTypingStatus('Typing...');
           },
@@ -69,9 +69,9 @@ const Typing = () => {
       />
       <TypeAnimation
         className='color-text-variable-string'
-        cursor={true}
+        cursor={false}
         sequence={[
-          2200,
+          6200,
           () => {
             setTypingStatus('Typing...');
           },
@@ -82,6 +82,21 @@ const Typing = () => {
           },
         ]}
         repeat={Infinity}
+      />
+      <TypeAnimation
+        className='color-text-variable-operand'
+        cursor={true}
+        sequence={[
+          7800,
+          () => {
+            setTypingStatus('Typing...');
+          },
+          ';',
+          1000, 
+          () => {
+            setTypingStatus('Done Typing');
+          },
+        ]}
       />
       <div style={{ color: getStatusColor(typingStatus), fontSize: '20px' }}>{typingStatus}</div>
     </div>
