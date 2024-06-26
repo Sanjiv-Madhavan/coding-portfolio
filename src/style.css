@@ -79,8 +79,8 @@
 
 .illustrator-message {
     font-size: 1rem;
-    background-color: rgb(192, 163, 105);
-    opacity: 0.5;
+    background-color: #527347;
+    opacity: .9;
     padding: 10px 5px 10px 5px;
     border-radius: 5px;
     display: block;
@@ -88,9 +88,59 @@
     color:rgb(255, 255, 255) !important;
     margin-top: 10px;
 }
+
+.showTerminalButton {
+    background-color: #fcac8c;
+    color: #1f1f1f;
+    border: 2px transparent;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+    margin: 5px;
+}
+
+.navLink {
+    background-color: #1f1f1f;
+    color: #6db1d6;
+    border-color: #6db1d6;
+    font-weight: 500;
+}
+
+.navLink:hover {
+    background-color: #6db1d6;
+    color: #1f1f1f;
+}
+
+.navLink.active {
+    background-color: #6db1d6 !important;
+    color: #1f1f1f;
+}
+
+.skill-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    img,span{
+        font-size: 3rem;
+        width: 3.5rem;
+    }
+}
+
+
 /* ------ Text Colors ------- */
 .color-text-variable-name {
     color: #6e96ab;
+}
+
+.color-text-variable-name-descriptors {
+    color: #6db1d6;
+    font-weight: 500;
 }
 
 .color-text-variable-keyword {

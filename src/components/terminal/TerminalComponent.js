@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { TerminalOutput, TerminalInput } from 'react-terminal-ui';
 import Terminal from 'react-terminal-ui';
+import SkillsComponent from '../Skills/SkillsComponent';
+import ClipboardComponent from '../CopyToClipboard/ClipboardComponent';
+import { Fade, Zoom } from 'react-awesome-reveal';
+import { Col } from 'react-bootstrap';
+
 const TerminalComponent = () => {
     const [terminalLines, setTerminalLines] = useState([
         <TerminalOutput>Welcome to the React Terminal! Type 'echo skills' to see your skills.</TerminalOutput>,
@@ -33,17 +38,22 @@ const TerminalComponent = () => {
         <div style={{ height: '300px', width: '600px' }}>
             {showSkills ? (
                 <div>
-                    <div style={{ color: 'white', fontSize: '24px' }}>Skills</div>
-                    <button onClick={toggleTerminal}>Show Terminal</button>
+                    <SkillsComponent />
+                    <button className="showTerminalButton" onClick={toggleTerminal}>Show Terminal</button>
                 </div>
             ) : (
-                <Terminal
-                    name="React Terminal"
-                    colorMode="dark"
-                    onInput={handleInput}
-                >
-                    {terminalLines}
-                </Terminal>
+                <Col style={{ overflow: "hidden" }}>
+                    <Fade>
+                        <ClipboardComponent />
+                        <Terminal
+                            name="React Terminal"
+                            colorMode="dark"
+                            onInput={handleInput}
+                        >
+                            {terminalLines}
+                        </Terminal>
+                    </Fade>
+                </Col>
             )}
         </div>
     );
