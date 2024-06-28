@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { TerminalOutput, TerminalInput } from 'react-terminal-ui';
 import Terminal from 'react-terminal-ui';
+import { Col } from 'react-bootstrap';
+import ClipboardComponent from '../CopyToClipboard/ClipboardComponent';
+import SkillsComponent from '../Skills/SkillsComponent';
+
 const TerminalComponent = () => {
     const [terminalLines, setTerminalLines] = useState([
-        <TerminalOutput>Welcome to the React Terminal! Type 'echo skills' to see your skills.</TerminalOutput>,
+        <TerminalOutput>Type 'echo skills' to see your skills.</TerminalOutput>,
     ]);
     const [showSkills, setShowSkills] = useState(false);
 
@@ -24,7 +28,7 @@ const TerminalComponent = () => {
     const toggleTerminal = () => {
         setShowSkills(!showSkills);
         let newLines = [
-            <TerminalOutput>Welcome to the React Terminal! Type 'echo skills' to see your skills.</TerminalOutput>,
+            <TerminalOutput>Type 'echo skills' to see my skills.</TerminalOutput>,
         ];
         setTerminalLines(newLines);
     };
@@ -33,17 +37,22 @@ const TerminalComponent = () => {
         <div style={{ height: '300px', width: '600px' }}>
             {showSkills ? (
                 <div>
-                    <div style={{ color: 'white', fontSize: '24px' }}>Skills</div>
-                    <button onClick={toggleTerminal}>Show Terminal</button>
+                    <SkillsComponent />
+                    <button className="showTerminalButton" onClick={toggleTerminal}>Show Terminal</button>
                 </div>
             ) : (
-                <Terminal
-                    name="React Terminal"
-                    colorMode="dark"
-                    onInput={handleInput}
-                >
-                    {terminalLines}
-                </Terminal>
+                <Col style={{ overflow: "hidden" }}>
+
+                        <ClipboardComponent />
+                        <Terminal
+                            name="Terminal"
+                            colorMode="dark"
+                            onInput={handleInput}
+                        >
+                            {terminalLines}
+                        </Terminal>
+
+                </Col>
             )}
         </div>
     );
