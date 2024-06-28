@@ -1,12 +1,14 @@
 import React from 'react'
 import { Container, Row, Col, Nav } from 'react-bootstrap'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 import { Slide } from 'react-awesome-reveal'
 import { useState } from 'react'
+import BackendSkillsComponent from './BackendSkillsComponent'
+import FrontendSkillsComponent from './FrontendSkillsComponent'
+import DevopsSkillsComponent from './DevopsSkillsComponent'
 
 function SkillsComponent() {
     const [selectedCategory, setSelectedCategory] = useState('')
-
     const handleCategorySelection = (selectedCategory) => {
         setSelectedCategory(selectedCategory);
         console.log(selectedCategory - "SelectedCaegory");
@@ -18,16 +20,18 @@ function SkillsComponent() {
                     <div>
                         <Nav justify variant="pills" activeKey={selectedCategory} defaultActiveKey="backend">
                             <Nav.Item className="navItem">
-                                <Nav.Link className={`navLink ${selectedCategory === 'backend' ? 'active' : ''}`} as={Link} to="backend" eventKey="link-1" onClick={() => handleCategorySelection('backend')}>Backend</Nav.Link>
+                                <Nav.Link className={`navLink ${selectedCategory === 'backend' ? 'active' : ''}`} as={Link} to="/" eventKey="link-1" onClick={() => handleCategorySelection('backend')}>Backend</Nav.Link>
                             </Nav.Item>
                             <Nav.Item className="navItem">
-                                <Nav.Link className={`navLink ${selectedCategory === 'frontend' ? 'active' : ''}`} as={Link} to="frontend" eventKey="link-2" onClick={() => handleCategorySelection('frontend')}>Frontend</Nav.Link>
+                                <Nav.Link className={`navLink ${selectedCategory === 'frontend' ? 'active' : ''}`} as={Link} to="/" eventKey="link-2" onClick={() => handleCategorySelection('frontend')}>Frontend</Nav.Link>
                             </Nav.Item>
                             <Nav.Item className="navItem">
-                                <Nav.Link className={`navLink ${selectedCategory === 'devops' ? 'active' : ''}`} as={Link} to="devops" eventKey="link-3" onClick={() => handleCategorySelection('devops')}>DevOps</Nav.Link>
+                                <Nav.Link className={`navLink ${selectedCategory === 'devops' ? 'active' : ''}`} as={Link} to="/" eventKey="link-3" onClick={() => handleCategorySelection('devops')}>DevOps</Nav.Link>
                             </Nav.Item>
                         </Nav>
-                        <Outlet />
+                        {(selectedCategory === 'backend' && <BackendSkillsComponent />)}
+                        {(selectedCategory === 'frontend' && <FrontendSkillsComponent />)}
+                        {(selectedCategory === 'devops' && <DevopsSkillsComponent />)}
                     </div>
                 </Slide>
             </Col>
