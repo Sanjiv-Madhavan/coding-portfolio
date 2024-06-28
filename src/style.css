@@ -81,6 +81,8 @@
     font-size: 1rem;
     background-color: #527347;
     opacity: .9;
+    background-color: #527347;
+    opacity: .9;
     padding: 10px 5px 10px 5px;
     border-radius: 5px;
     display: block;
@@ -182,6 +184,11 @@ footer {
 /* ------ Text Colors ------- */
 .color-text-variable-name {
     color: #6e96ab;
+}
+
+.color-text-variable-name-descriptors {
+    color: #6db1d6;
+    font-weight: 500;
 }
 
 .color-text-variable-keyword {
