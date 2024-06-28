@@ -6,6 +6,9 @@ import HomePage from './pages/homePage/HomePage';
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import Preloader from './Preloader';
+import BackendSkillsComponent from './components/Skills/BackendSkillsComponent';
+import FrontendSkillsComponent from './components/Skills/FrontendSkillsComponent';
+import DevopsSkillsComponent from './components/Skills/DevopsSkillsComponent';
 
 function App() {
   const [load, updateLoad] = useState(true);
@@ -13,7 +16,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       updateLoad(false);
-    }, 4000);
+    }, 0);
 
     return () => clearTimeout(timer);
   }, []);
@@ -23,7 +26,11 @@ function App() {
       <Preloader load={load} />
       <div className='App'>
       <Routes>
-        <Route path='/' element={<HomePage />}></Route>
+        <Route path='/' element={<HomePage />}>
+        <Route path='backend' element={<BackendSkillsComponent />} />
+        <Route path='frontend' element={<FrontendSkillsComponent />} />
+        <Route path='devops' element={<DevopsSkillsComponent />} />
+        </Route>
       </Routes>
       </div>
     </Router>

@@ -23,7 +23,7 @@ export default function About() {
                 <Row className='about-me-individual-contents'>
                     <Fade>
                         <Zoom cascade>
-                            <p style={{ margin: "0px" }}>
+                            <p className="color-text-variable-name-descriptors" style={{ margin: "0px" }}>
                                 I am <strong className="color-text-variable-string">Sanjiv</strong>, a seasoned <strong className="color-text-variable-string">Fullstack Developer </strong> with a knack for design,
                                 having four years of experience at <strong className="color-text-variable-string">SAP LABS India</strong>. I bring a diverse skill set and proven expertise in various technologies.
                                 To know more details, Browse the below expertise. 
@@ -34,7 +34,6 @@ export default function About() {
                     </Fade>
                 </Row>
                 <Row className='about-me-individual-contents'>
-                    <ClipboardComponent />
                     <TerminalComponent />
                 </Row>
             </Col>
