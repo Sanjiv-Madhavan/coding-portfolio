@@ -39,8 +39,6 @@ const TerminalComponent = () => {
                 <div>
                     <SkillsComponent />
                     <button className="showTerminalButton" onClick={toggleTerminal}>Show Terminal</button>
-                    <SkillsComponent />
-                    <button className="showTerminalButton" onClick={toggleTerminal}>Show Terminal</button>
                 </div>
             ) : (
                 <Col style={{ overflow: "hidden" }}>
