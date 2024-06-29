@@ -6,11 +6,14 @@ import ReactParallaxTilt from 'react-parallax-tilt';
 import About from '../../components/about/about';
 import ProjectsComponent from '../../components/projects/ProjectsComponent';
 import { Fade, Slide } from 'react-awesome-reveal';
+import HeaderComponent from '../../components/Header/HeaderComponent';
 
 function HomePage() {
   return (
+    <>
+    <HeaderComponent />
     <section className='hero'>
-      <Container fluid>
+      <Container fluid id="hero">
         <ParticlesComponent />
         <Container className='hero-content'>
           <Row>
@@ -50,6 +53,8 @@ function HomePage() {
         </Container>
       </Container>
     </section>
+    </>
+    
   )
 }
 

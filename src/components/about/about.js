@@ -7,7 +7,7 @@ import { AttentionSeeker } from 'react-awesome-reveal';
 
 export default function About() {
     return (
-        <Row className='section-partition'>
+        <Row id="about" className='section-partition'>
             <Row>
                 <h1 className='color-text-variable-keyword' style={{ fontSize: "50px" }}
                 >About Me</h1>

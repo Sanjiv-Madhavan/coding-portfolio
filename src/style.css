@@ -20,6 +20,34 @@
     z-index: -1;
 }
 
+.navigationPane {
+    position: fixed;
+    z-index: 9999;
+    backdrop-filter: blur(6px);
+}
+
+.navigationPane-items {
+    padding-left: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px 20px 0px;
+}
+
+.navigationPane-items-navLinks {
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 20px;
+    transition: all 0.5s;
+    color: white;
+}
+
+.navigationPane-items-navLinks:hover {
+    background-color: #fcac8c;
+    color: #1f1f1f;
+    border-radius: 5px;
+}
+
 .hero {
     position: relative;
     z-index: 2;
