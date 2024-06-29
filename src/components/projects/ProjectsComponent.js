@@ -17,7 +17,7 @@ function ProjectsComponent() {
         console.log(selectedProjectCategory );
     }
   return (
-    <Container fluid className='section-partition-projects'>
+    <Container id="projects" fluid className='section-partition-projects'>
         <h1 className='color-text-variable-keyword' style={{ paddingBottom: "30px"}}>My Projects</h1>
         <Row>
             <Col className='project-grid'>
